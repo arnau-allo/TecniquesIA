@@ -10,9 +10,22 @@ Pursue::~Pursue()
 
 void Pursue::applySteeringForce(Agent *agent, float dtime)
 {
-	float T = (agent->getPosition() - agent->getTarget()).Length() / agent->getVelocity().Length();
-	Vector2D predictedTarget = agent->getTarget() + agent->getMaxVelocity() * T;
-	Vector2D desiredVelocity = predictedTarget - agent->getPosition();
+	float T;
+	if (agent->getVelocity() == 0) 
+	{
+		T = (agent->getPosition() - agent->getAgentToPursue()->getPosition()).Length() / agent->getMaxVelocity();
+
+	}
+	else 
+	{
+		T = (agent->getPosition() - agent->getAgentToPursue()->getPosition()).Length() / agent->getVelocity().Length();
+
+	}
+	Vector2D predictedTarget = agent->getAgentToPursue()->getPosition() + agent->getAgentToPursue()->getVelocity() * T;
+
+	agent->setTarget(predictedTarget);
+
+	Vector2D desiredVelocity = agent->getTarget() - agent->getPosition();
 	//desiredVelocity.Normalize();
 	desiredVelocity *= agent->getMaxVelocity();
 

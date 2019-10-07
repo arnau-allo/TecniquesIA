@@ -66,6 +66,12 @@ float Agent::getSlowingRadius()
 	return slowingRadius;
 }
 
+Agent* Agent::getAgentToPursue() 
+{
+	return agentToPursue;
+}
+
+
 void Agent::setPosition(Vector2D _position)
 {
 	position = _position;

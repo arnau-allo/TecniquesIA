@@ -47,6 +47,7 @@ public:
 	float getMaxVelocity();
 	float getMass();
 	float getSlowingRadius();
+	Agent* getAgentToPursue();
 	void setBehavior(SteeringBehavior *behavior);
 	void setPosition(Vector2D position);
 	void setTarget(Vector2D target);
