@@ -10,8 +10,9 @@ SceneWander::SceneWander()
 {
 	Agent *agent = new Agent;
 	agent->setBehavior(new Wander);
-	agent->setPosition(Vector2D(600, 50));
-	agent->setTarget(Vector2D(900, 650));
+	agent->setPosition(Vector2D(300, 300));
+	agent->setVelocity(Vector2D(10,0));
+	//agent->setTarget(Vector2D(900, 650));
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agents.push_back(agent);
 	target = Vector2D(100, 100);
@@ -30,31 +31,21 @@ SceneWander::~SceneWander()
 
 void SceneWander::update(float dtime, SDL_Event *event) {
 	/* Keyboard & Mouse events */
-	switch (event->type) {
-	case SDL_MOUSEMOTION:
-		/*case SDL_MOUSEBUTTONDOWN:
-			if (event->button.button == SDL_BUTTON_LEFT)
-			{
-				target = Vector2D((float)(event->button.x), (float)(event->button.y));
-				agents[0]->setTarget(target);
-			}
-			break;
-		default:
-			break;
-		}*/
-
-		//agents[0]->setTarget(target);
-
-		for (int i = 0; i < (int)agents.size(); i++)
-		{
-			agents[i]->update(dtime, event);
-		}
+	
+	for (int i = 0; i < (int)agents.size(); i++)
+	{
+		agents[i]->update(dtime, event);
 	}
 }
 
 void SceneWander::draw()
 {
-	draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 55, 0, 255, 0);
+	
+	draw_circle(TheApp::Instance()->getRenderer(), (int)agents[0]->getCircleCenter().x, (int)agents[0]->getCircleCenter().y, (int)agents[0]->getWanderRadius(), 55, 0, 255, 0);
+	draw_circle(TheApp::Instance()->getRenderer(), (int)agents[0]->getTarget().x, (int)agents[0]->getTarget().y, 5, 0, 255, 255, 0);
+	SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)agents[0]->getCircleCenter().x, (int)agents[0]->getCircleCenter().y, (int)agents[0]->getCircleCenter().x + agents[0]->getWanderRadius() * cos(agents[0]->getWanderAngle()), (int)agents[0]->getCircleCenter().x + agents[0]->getWanderRadius() * sin(agents[0]->getWanderAngle()));
+	
+	//draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 55, 255, 103, 255);
 	for (int i = 0; i < (int)agents.size(); i++)
 	{
 		agents[i]->draw();

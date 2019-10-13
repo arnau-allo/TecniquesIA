@@ -3,18 +3,25 @@
 using namespace std;
 
 Agent::Agent() : sprite_texture(0),
-                 position(Vector2D(100, 100)),
-	             target(Vector2D(1000, 100)),
-	             velocity(Vector2D(0,0)),
-	             speed(0.5),
-	             max_force(1),
-	             max_velocity(200),
-	             orientation(0),
-				 sprite_num_frames(0),
-	             sprite_w(0),
-	             sprite_h(0),
-				 slowingRadius(100),
-	             draw_sprite(false)
+			position(Vector2D(100, 100)),
+			target(Vector2D(1000, 100)),
+			velocity(Vector2D(0, 0)),
+			speed(0.5),
+			max_force(1),
+			max_velocity(200),
+			orientation(0),
+			sprite_num_frames(0),
+			sprite_w(0),
+			sprite_h(0),
+			slowingRadius(100),
+			draw_sprite(false),
+
+	//WANDER
+			wanderRadius(50),
+			wanderOffset(100),
+			wanderMaxChange(5),
+			wanderAngle(10),
+			displacementWander(Vector2D(0, -1))
 {
 }
 
@@ -163,4 +170,43 @@ bool Agent::loadSpriteTexture(char* filename, int _num_frames)
 		SDL_FreeSurface(image);
 
 	return true;
+}
+
+//WANDER
+float  Agent::getWanderAngle() {
+	return wanderAngle;
+};
+float  Agent::getWanderRadius() {
+	return wanderRadius;
+};
+float  Agent::getWanderOffset() {
+	return wanderOffset;
+};
+int  Agent::getWanderMaxChange() {
+	return wanderMaxChange;
+};
+Vector2D  Agent::getCircleCenter() {
+	return circleCenter;
+};
+Vector2D Agent::getDisplacementWander() {
+	return displacementWander;
+}
+void  Agent::setWanderAngle(float angle) {
+	wanderAngle = angle;
+};
+void  Agent::setWanderRadius(float radius) {
+	wanderRadius = radius;
+};
+void  Agent::setWanderOffset(float offset) {
+	wanderOffset = offset;
+};
+void  Agent::setWanderMaxChange(int MaxChange) {
+	wanderMaxChange = MaxChange;
+};
+void  Agent::setCircleCenter(Vector2D pos) {
+	circleCenter = pos;
+};
+
+void Agent::setDisplacementWander(Vector2D vec) {
+	displacementWander = vec;
 }

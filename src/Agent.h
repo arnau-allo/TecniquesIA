@@ -14,9 +14,11 @@ public:
 	class SteeringBehavior
 	{
 	public:
+
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
 		virtual void applySteeringForce(Agent *agent, float dtime) {};
+	
 	};
 private:
 	SteeringBehavior *steering_behaviour;
@@ -37,6 +39,14 @@ private:
 	int sprite_w;
 	int sprite_h;
 
+	//WANDER
+	float wanderAngle;
+	float wanderRadius;
+	float wanderOffset;
+	int wanderMaxChange;
+	Vector2D circleCenter;
+	Vector2D displacementWander;
+	
 public:
 	Agent();
 	~Agent();
@@ -56,5 +66,19 @@ public:
 	void update(float dtime, SDL_Event *event);
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames=1);
+
+	//WANDER
+	float getWanderAngle();
+	float getWanderRadius();
+	float getWanderOffset();
+	int getWanderMaxChange();
+	Vector2D getCircleCenter();
+	Vector2D getDisplacementWander();
+	void setWanderAngle(float angle);
+	void setWanderRadius(float radius);
+	void setWanderOffset(float offset);
+	void setWanderMaxChange(int MaxChange);
+	void setCircleCenter(Vector2D pos);
+	void setDisplacementWander(Vector2D vec);
 	
 };

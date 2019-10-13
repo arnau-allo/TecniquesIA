@@ -2,7 +2,7 @@
 #include <vector>
 #include "Scene.h"
 #include "Agent.h"
-
+#include "Wander.h"
 
 class SceneWander :
 	public Scene
@@ -10,6 +10,7 @@ class SceneWander :
 public:
 	SceneWander();
 	~SceneWander();
+	Wander _wander;
 	void update(float dtime, SDL_Event *event);
 	void draw();
 	const char* getTitle();

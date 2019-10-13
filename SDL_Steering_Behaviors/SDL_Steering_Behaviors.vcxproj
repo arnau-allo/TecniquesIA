@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{48D8AFB0-551E-45CB-8730-E2CF8571445D}</ProjectGuid>
     <RootNamespace>SDL_Steering_Behaviors</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -131,22 +131,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Agent.cpp" />
+    <ClCompile Include="..\src\Evade.cpp" />
     <ClCompile Include="..\src\Flee.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Pursue.cpp" />
+    <ClCompile Include="..\src\SceneEvade.cpp" />
     <ClCompile Include="..\src\SceneFlee.cpp" />
     <ClCompile Include="..\src\ScenePursue.cpp" />
     <ClCompile Include="..\src\SceneSeekFlee.cpp" />
     <ClCompile Include="..\src\SceneSeek.cpp" />
+    <ClCompile Include="..\src\SceneWander.cpp" />
     <ClCompile Include="..\src\SDL_SimpleApp.cpp" />
     <ClCompile Include="..\src\Seek.cpp" />
     <ClCompile Include="..\src\utils .cpp" />
+    <ClCompile Include="..\src\Wander.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Agent.h" />
+    <ClInclude Include="..\src\Evade.h" />
     <ClInclude Include="..\src\Flee.h" />
     <ClInclude Include="..\src\Pursue.h" />
+    <ClInclude Include="..\src\SceneEvade.h" />
     <ClInclude Include="..\src\ScenePursue.h" />
+    <ClInclude Include="..\src\SceneWander.h" />
     <ClInclude Include="..\src\utils.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneFlee.h" />
@@ -155,6 +162,7 @@
     <ClInclude Include="..\src\SDL_SimpleApp.h" />
     <ClInclude Include="..\src\Seek.h" />
     <ClInclude Include="..\src\Vector2D.h" />
+    <ClInclude Include="..\src\Wander.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\res\spritesheet.png" />
