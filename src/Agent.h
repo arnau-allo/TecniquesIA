@@ -2,6 +2,7 @@
 #include <iostream>
 #include <minmax.h>
 #include <SDL.h>
+#include <vector>
 #include <SDL_image.h>
 #include "SDL_SimpleApp.h"
 #include "Vector2D.h"
@@ -46,6 +47,10 @@ private:
 	int wanderMaxChange;
 	Vector2D circleCenter;
 	Vector2D displacementWander;
+
+	//FLOCKING
+	std::vector<Agent*> neighbors;
+
 	
 public:
 	Agent();
@@ -80,5 +85,9 @@ public:
 	void setWanderMaxChange(int MaxChange);
 	void setCircleCenter(Vector2D pos);
 	void setDisplacementWander(Vector2D vec);
+
+	//FLOCKING
+	std::vector<Agent*> getNeighbors();
+	void setNeighbors(std::vector<Agent*> vector);
 	
 };

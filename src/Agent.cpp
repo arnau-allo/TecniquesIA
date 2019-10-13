@@ -210,3 +210,12 @@ void  Agent::setCircleCenter(Vector2D pos) {
 void Agent::setDisplacementWander(Vector2D vec) {
 	displacementWander = vec;
 }
+
+//FLOCKING
+std::vector<Agent*> Agent::getNeighbors() {
+	return neighbors;
+}
+
+void Agent::setNeighbors(std::vector<Agent*> vector) {
+	neighbors = vector;
+}

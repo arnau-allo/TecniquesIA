@@ -68,5 +68,5 @@ void SceneEvade::draw()
 
 const char* SceneEvade::getTitle()
 {
-	return "SDL Steering Behaviors :: Pursue Demo";
+	return "SDL Steering Behaviors :: Evade Demo";
 }

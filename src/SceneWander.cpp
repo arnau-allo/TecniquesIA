@@ -54,5 +54,5 @@ void SceneWander::draw()
 
 const char* SceneWander::getTitle()
 {
-	return "SDL Steering Behaviors :: Pursue Demo";
+	return "SDL Steering Behaviors :: Wander Demo";
 }
