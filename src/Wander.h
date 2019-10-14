@@ -10,4 +10,5 @@ public:
 	~Wander();
 	void applySteeringForce(Agent *agent, float dtime);
 	float RandomBinomial();
+	float RandomFloat(float a, float b);
 };

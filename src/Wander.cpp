@@ -1,3 +1,4 @@
+#include <time.h>
 #include "Wander.h"
 
 Wander::Wander()
@@ -11,29 +12,35 @@ Wander::~Wander()
 
 void Wander::applySteeringForce(Agent *agent, float dtime)
 {
-	
+	srand(time(NULL));
 	
 	//agent->setWanderAngle(agent->getWanderAngle() + (rand() % agent->getWanderMaxChange() * 2) - agent->getWanderMaxChange());
+	//float randNum = RandomFloat(-agent->getWanderMaxChange(), agent->getWanderMaxChange());
+	float binomial = (float)(rand() % 2 - rand() % 2);
+	//float randomAngle = (rand() % (int)agent->getWanderMaxChange() * 2 - agent->getWanderMaxChange());
+	
+	//float randNum = (float)((rand() % 10000 * binomial*agent->getWanderMaxChange()) / 10000);
 
-	/*
-	agent->setWanderAngle(agent->getWanderAngle() + RandomBinomial()* agent->getWanderMaxChange());
+	agent->setWanderAngle(agent->getWanderAngle() + binomial*agent->getWanderMaxChange());
 
 	agent->setCircleCenter(agent->getPosition() + agent->getVelocity().Normalize()*agent->getWanderOffset());
 
-	agent->setDisplacementWander(agent->getDisplacementWander().Normalize() * agent->getWanderRadius());
+	Vector2D tempVec = Vector2D(agent->getCircleCenter().x + cos(agent->getWanderAngle()*DEG2RAD) * agent->getWanderRadius(), agent->getCircleCenter().y + sin(agent->getWanderAngle()*DEG2RAD) * agent->getWanderRadius());
 
-	agent->setDisplacementWander((cos(agent->getWanderAngle()) * agent->getWanderRadius(), sin(agent->getWanderAngle()) * agent->getWanderRadius()));
+	//agent->setDisplacementWander();
 
-	agent->setWanderAngle(agent->getWanderAngle() + rand() % (agent->getWanderMaxChange() * 2)  - agent->getWanderMaxChange());
-	//std::cout << wanderCenter.x << " " << wanderCenter.y << std::endl;
-	Vector2D wanderForce = agent->getCircleCenter() + agent->getDisplacementWander();
-	*/
+	
+	
+	agent->setTarget(tempVec);
+	//std::cout << randNum << std::endl;
+	//std::cout << tempVec.x << " " << tempVec.y << std::endl;
 
+/*
 	agent->setCircleCenter(agent->getPosition() + agent->getVelocity().Normalize()*agent->getWanderOffset());
 	float angle = rand() % 2;
 	angle *= 2 * M_PI;
 	agent->setTarget((agent->getCircleCenter().x + agent->getWanderRadius() * cos(angle), agent->getCircleCenter().y + agent->getWanderRadius() * sin(angle)));
-	
+*/
 	Vector2D desiredVelocity = agent->getTarget() - agent->getPosition();
 	//desiredVelocity.Normalize();
 	desiredVelocity *= agent->getMaxVelocity();
@@ -52,7 +59,14 @@ void Wander::applySteeringForce(Agent *agent, float dtime)
 }
 
 float Wander::RandomBinomial() {
-	return (rand() / (1)) - (rand() / (1));
+	return (rand() % 2 - rand() % 2);
+}
+
+float Wander::RandomFloat(float a, float b) {
+	float random = ((float)rand()) / (float)RAND_MAX;
+	float diff = b - a;
+	float r = random * diff;
+	return a + r;
 }
 
 

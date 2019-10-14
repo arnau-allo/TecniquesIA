@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SDL_Steering_Behaviors/SDL_Steering_Behaviors/Debug/Wander.obj

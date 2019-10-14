@@ -1,3 +1,4 @@
+#include <time.h>
 #include "SceneFlocking.h"
 #include "Agent.h"
 #include "Pursue.h"
@@ -8,6 +9,7 @@
 
 SceneFlocking::SceneFlocking()
 {
+	srand(time(NULL));
 	Agent *agent = new Agent;
 	agent->setBehavior(new Flocking);
 	agent->setPosition(Vector2D(rand() % 600, rand() % 600));
@@ -88,6 +90,7 @@ void SceneFlocking::draw()
 	for (int i = 0; i < (int)agents.size(); i++)
 	{
 		agents[i]->draw();
+		draw_circle(TheApp::Instance()->getRenderer(), (int)agents[i]->getPosition().x, (int)agents[i]->getPosition().y, 200, 55, 0, 255, 0);
 	}
 }
 

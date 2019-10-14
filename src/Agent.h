@@ -44,7 +44,7 @@ private:
 	float wanderAngle;
 	float wanderRadius;
 	float wanderOffset;
-	int wanderMaxChange;
+	float wanderMaxChange;
 	Vector2D circleCenter;
 	Vector2D displacementWander;
 
@@ -76,13 +76,13 @@ public:
 	float getWanderAngle();
 	float getWanderRadius();
 	float getWanderOffset();
-	int getWanderMaxChange();
+	float getWanderMaxChange();
 	Vector2D getCircleCenter();
 	Vector2D getDisplacementWander();
 	void setWanderAngle(float angle);
 	void setWanderRadius(float radius);
 	void setWanderOffset(float offset);
-	void setWanderMaxChange(int MaxChange);
+	void setWanderMaxChange(float MaxChange);
 	void setCircleCenter(Vector2D pos);
 	void setDisplacementWander(Vector2D vec);
 

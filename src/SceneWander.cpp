@@ -43,7 +43,7 @@ void SceneWander::draw()
 	
 	draw_circle(TheApp::Instance()->getRenderer(), (int)agents[0]->getCircleCenter().x, (int)agents[0]->getCircleCenter().y, (int)agents[0]->getWanderRadius(), 55, 0, 255, 0);
 	draw_circle(TheApp::Instance()->getRenderer(), (int)agents[0]->getTarget().x, (int)agents[0]->getTarget().y, 5, 0, 255, 255, 0);
-	SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)agents[0]->getCircleCenter().x, (int)agents[0]->getCircleCenter().y, (int)agents[0]->getCircleCenter().x + agents[0]->getWanderRadius() * cos(agents[0]->getWanderAngle()), (int)agents[0]->getCircleCenter().x + agents[0]->getWanderRadius() * sin(agents[0]->getWanderAngle()));
+	SDL_RenderDrawLine(TheApp::Instance()->getRenderer(), (int)agents[0]->getCircleCenter().x, (int)agents[0]->getCircleCenter().y, (int)agents[0]->getTarget().x, (int)agents[0]->getTarget().y);
 	
 	//draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 55, 255, 103, 255);
 	for (int i = 0; i < (int)agents.size(); i++)

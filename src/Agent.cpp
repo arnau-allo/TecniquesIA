@@ -17,10 +17,10 @@ Agent::Agent() : sprite_texture(0),
 			draw_sprite(false),
 
 	//WANDER
-			wanderRadius(50),
-			wanderOffset(100),
-			wanderMaxChange(5),
-			wanderAngle(10),
+			wanderRadius(100),
+			wanderOffset(200),
+			wanderMaxChange(0.13f),
+			wanderAngle(0.017f),
 			displacementWander(Vector2D(0, -1))
 {
 }
@@ -182,7 +182,7 @@ float  Agent::getWanderRadius() {
 float  Agent::getWanderOffset() {
 	return wanderOffset;
 };
-int  Agent::getWanderMaxChange() {
+float  Agent::getWanderMaxChange() {
 	return wanderMaxChange;
 };
 Vector2D  Agent::getCircleCenter() {
@@ -200,7 +200,7 @@ void  Agent::setWanderRadius(float radius) {
 void  Agent::setWanderOffset(float offset) {
 	wanderOffset = offset;
 };
-void  Agent::setWanderMaxChange(int MaxChange) {
+void  Agent::setWanderMaxChange(float MaxChange) {
 	wanderMaxChange = MaxChange;
 };
 void  Agent::setCircleCenter(Vector2D pos) {
