@@ -11,4 +11,5 @@ public:
 	void applySteeringForce(Agent *agent, float dtime);
 	float RandomBinomial();
 	float RandomFloat(float a, float b);
+	float maxAngle = 0.7854f; //45 graus en radians
 };

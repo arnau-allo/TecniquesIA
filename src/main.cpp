@@ -10,6 +10,7 @@
 #include "SceneEvade.h"
 #include "SceneWander.h"
 #include "SceneFlocking.h"
+#include "SceneCreative.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ int main(int argc, char ** argv)
 {
 	bool quit = false;
 	SDL_Event event;
-
+	
 	SDL_SimpleApp *app = SDL_SimpleApp::Instance();
 
 	Scene *curr_scene = new SceneSeek;
@@ -72,6 +73,12 @@ int main(int argc, char ** argv)
 			{
 				delete(curr_scene);
 				curr_scene = new SceneFlocking;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_8)
+			{
+				delete(curr_scene);
+				curr_scene = new SceneCreative;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))

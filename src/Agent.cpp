@@ -19,8 +19,8 @@ Agent::Agent() : sprite_texture(0),
 	//WANDER
 			wanderRadius(100),
 			wanderOffset(200),
-			wanderMaxChange(0.13f),
-			wanderAngle(0.017f),
+			wanderMaxChange(0.0013f),
+			wanderAngle(0),
 			displacementWander(Vector2D(0, -1))
 {
 }

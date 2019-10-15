@@ -22,8 +22,12 @@ void Flocking::applySteeringForce(Agent *agent, float dtime)
 			neighborCount++;
 		}
 	}
-	separationVector /= neighborCount;
-	separationDirection = separationVector.Normalize();
+
+	if (neighborCount > 0) {
+		separationVector /= neighborCount;
+		separationDirection = separationVector.Normalize();
+	}
+	
 	
 
 	Vector2D cohesionDirection;
@@ -36,9 +40,13 @@ void Flocking::applySteeringForce(Agent *agent, float dtime)
 			neighborCount++;
 		}
 	}
-	averagePosition /= neighborCount;
-	averagePosition -= agent->getPosition();
-	cohesionDirection = averagePosition.Normalize();
+
+	if (neighborCount > 0) {
+		averagePosition /= neighborCount;
+		averagePosition -= agent->getPosition();
+		cohesionDirection = averagePosition.Normalize();
+	}
+	
 
 
 
@@ -52,11 +60,15 @@ void Flocking::applySteeringForce(Agent *agent, float dtime)
 			neighborCount++;
 		}
 	}
-	averageVelocity /= neighborCount;
-	alignmentDirection = averageVelocity.Normalize();
+
+	if (neighborCount > 0) {
+		averageVelocity /= neighborCount;
+		alignmentDirection = averageVelocity.Normalize();
+	}
 
 	Vector2D flockingForce = separationDirection * K_SEPARATION_FORCE + cohesionDirection * K_COHESION_FORCE + alignmentDirection * K_ALIGNMENT_FORCE;
 
+	flockingForce = flockingForce.Normalize() * agent->getMaxVelocity();
 
 	agent->setTarget(agent->getPosition() + flockingForce);
 

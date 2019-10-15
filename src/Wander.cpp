@@ -21,11 +21,20 @@ void Wander::applySteeringForce(Agent *agent, float dtime)
 	
 	//float randNum = (float)((rand() % 10000 * binomial*agent->getWanderMaxChange()) / 10000);
 
-	agent->setWanderAngle(agent->getWanderAngle() + binomial*agent->getWanderMaxChange());
+
+	float randNum = (rand() % 1000)*agent->getWanderMaxChange();
+	randNum /= 1000;
+	std::cout << randNum << std::endl;
+	agent->setWanderAngle(agent->getWanderAngle() + binomial* agent->getWanderMaxChange());
+
+	if (agent->getWanderAngle() > maxAngle || agent->getWanderAngle() < -maxAngle) {
+		agent->setWanderAngle(agent->getWanderAngle() + -binomial * agent->getWanderMaxChange());
+	}
+	
 
 	agent->setCircleCenter(agent->getPosition() + agent->getVelocity().Normalize()*agent->getWanderOffset());
 
-	Vector2D tempVec = Vector2D(agent->getCircleCenter().x + cos(agent->getWanderAngle()*DEG2RAD) * agent->getWanderRadius(), agent->getCircleCenter().y + sin(agent->getWanderAngle()*DEG2RAD) * agent->getWanderRadius());
+	Vector2D tempVec = Vector2D(agent->getCircleCenter().x + cos(agent->getWanderAngle()) * agent->getWanderRadius(), agent->getCircleCenter().y + sin(agent->getWanderAngle()) * agent->getWanderRadius());
 
 	//agent->setDisplacementWander();
 

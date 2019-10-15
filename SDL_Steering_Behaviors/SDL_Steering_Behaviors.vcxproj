@@ -136,6 +136,7 @@
     <ClCompile Include="..\src\Flocking.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Pursue.cpp" />
+    <ClCompile Include="..\src\SceneCreative.cpp" />
     <ClCompile Include="..\src\SceneEvade.cpp" />
     <ClCompile Include="..\src\SceneFlee.cpp" />
     <ClCompile Include="..\src\SceneFlocking.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="..\src\Flee.h" />
     <ClInclude Include="..\src\Flocking.h" />
     <ClInclude Include="..\src\Pursue.h" />
+    <ClInclude Include="..\src\SceneCreative.h" />
     <ClInclude Include="..\src\SceneEvade.h" />
     <ClInclude Include="..\src\SceneFlocking.h" />
     <ClInclude Include="..\src\ScenePursue.h" />
