@@ -1,0 +1,17 @@
+﻿  Agent.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\agent.h(4): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Grid.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\agent.h(4): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  main.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\main.cpp(2): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  PathFollowing.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\agent.h(4): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  SceneDecisions.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\scene.h(3): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  SDL_SimpleApp.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\sdl_simpleapp.h(3): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Seek.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\agent.h(4): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  utils.cpp
+c:\users\arnau.allo\desktop\sdl_decisions\src\utils.cpp(5): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Generating Code...
