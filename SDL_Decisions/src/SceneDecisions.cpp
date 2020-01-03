@@ -15,12 +15,14 @@ SceneDecisions::SceneDecisions()
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agent->setBehavior(new PathFollowing);
 	agent->setTarget(Vector2D(-20,-20));
+	agent->setScene(this);
 	agents.push_back(agent);
 
 	agent = new Agent;
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agent->setBehavior(new PathFollowing);
 	agent->setTarget(Vector2D(-20, -20));
+	agent->setScene(this);
 	agents.push_back(agent);
 
 	// set agent position coords to the center of a random cell
@@ -33,6 +35,12 @@ SceneDecisions::SceneDecisions()
 	while (!maze->isValidCell(rand_cell2) || (rand_cell == rand_cell2))
 		rand_cell2 = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 	agents[1]->setPosition(maze->cell2pix(rand_cell2));
+
+
+	// set the coin in a random cell (but at least 3 cells far from the agent)
+	coinPosition = Vector2D(-1, -1);
+	while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, rand_cell2) < 3))
+		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 
 }
 
@@ -75,6 +83,14 @@ void SceneDecisions::update(float dtime, SDL_Event *event)
 
 	agents[0]->update(dtime, event);
 	agents[1]->update(dtime, event);
+
+	// if we have arrived to the coin, replace it in a random cell!
+	if ((agents[1]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[1]->getPosition()) == coinPosition))
+	{
+		coinPosition = Vector2D(-1, -1);
+		while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, maze->pix2cell(agents[1]->getPosition())) < 3))
+			coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+	}
 }
 
 void SceneDecisions::draw()
@@ -122,9 +138,6 @@ void SceneDecisions::drawMaze()
 			} else {
 				// Do not draw if it is not necessary (bg is already black)
 			}
-
-			
-			
 		}
 	}
 	//Alternative: render a backgroud texture:

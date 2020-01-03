@@ -7,6 +7,7 @@
 #include "Path.h"
 #include "Vector2D.h"
 #include "utils.h"
+#include "SensorySystem.h"
 
 class Agent
 {
@@ -63,6 +64,8 @@ public:
 	Agent();
 	~Agent();
 
+	SensorySystem* sensors;
+
 	void update(float dtime, SDL_Event *event);
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames = 1);
@@ -84,6 +87,7 @@ public:
 	int getPathSize();
 	Vector2D getPathPoint(int idx);
 	void clearPath();
+	void setScene(SceneDecisions *scene);
 
 	bool hasGun();
 	void setGun(bool gun);
