@@ -1,10 +1,2 @@
-﻿  Agent.cpp
-  Grid.cpp
-  main.cpp
-  PathFollowing.cpp
-  SceneDecisions.cpp
-  SDL_SimpleApp.cpp
-  Seek.cpp
-  utils.cpp
-  Generating Code...
-  SDL_Decisions.vcxproj -> C:\Users\arnau.allo\Desktop\SDL_Decisions\\bin\SDL_Decisions.exe
+﻿  SceneDecisions.cpp
+  SDL_Decisions.vcxproj -> C:\Users\Arnau\Desktop\TecniquesIA\SDL_Decisions\\bin\SDL_Decisions.exe

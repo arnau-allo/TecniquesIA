@@ -57,6 +57,8 @@ private:
 	int sprite_w;
 	int sprite_h;
 
+	bool armed;
+
 public:
 	Agent();
 	~Agent();
@@ -83,4 +85,6 @@ public:
 	Vector2D getPathPoint(int idx);
 	void clearPath();
 
+	bool hasGun();
+	void setGun(bool gun);
 };

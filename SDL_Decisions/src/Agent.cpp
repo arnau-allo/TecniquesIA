@@ -14,6 +14,7 @@ Agent::Agent() : sprite_texture(0),
 				 sprite_num_frames(0),
 	             sprite_w(0),
 	             sprite_h(0),
+				 armed(false),
 	             draw_sprite(false)
 {
 }
@@ -195,4 +196,12 @@ bool Agent::loadSpriteTexture(char* filename, int _num_frames)
 		SDL_FreeSurface(image);
 
 	return true;
+}
+
+bool Agent::hasGun() {
+	return armed;
+}
+
+void Agent::setGun(bool gun) {
+	armed = gun;
 }

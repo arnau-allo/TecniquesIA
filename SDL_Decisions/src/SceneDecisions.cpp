@@ -17,16 +17,22 @@ SceneDecisions::SceneDecisions()
 	agent->setTarget(Vector2D(-20,-20));
 	agents.push_back(agent);
 
+	agent = new Agent;
+	agent->loadSpriteTexture("../res/soldier.png", 4);
+	agent->setBehavior(new PathFollowing);
+	agent->setTarget(Vector2D(-20, -20));
+	agents.push_back(agent);
+
 	// set agent position coords to the center of a random cell
 	Vector2D rand_cell(-1,-1);
 	while (!maze->isValidCell(rand_cell))
 		rand_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 	agents[0]->setPosition(maze->cell2pix(rand_cell));
 
-	// set the coin in a random cell (but at least 3 cells far from the agent)
-	coinPosition = Vector2D(-1,-1);
-	while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, rand_cell)<3))
-		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+	Vector2D rand_cell2(-1, -1);
+	while (!maze->isValidCell(rand_cell2) || (rand_cell == rand_cell2))
+		rand_cell2 = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+	agents[1]->setPosition(maze->cell2pix(rand_cell2));
 
 }
 
@@ -34,8 +40,6 @@ SceneDecisions::~SceneDecisions()
 {
 	if (background_texture)
 		SDL_DestroyTexture(background_texture);
-	if (coin_texture)
-		SDL_DestroyTexture(coin_texture);
 
 	for (int i = 0; i < (int)agents.size(); i++)
 	{
@@ -50,6 +54,10 @@ void SceneDecisions::update(float dtime, SDL_Event *event)
 	case SDL_KEYDOWN:
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_grid = !draw_grid;
+		if (event->key.keysym.scancode == SDL_SCANCODE_A)
+			agents[0]->setGun(true);
+		if (event->key.keysym.scancode == SDL_SCANCODE_S)
+			agents[0]->setGun(false);
 		break;
 	case SDL_MOUSEMOTION:
 	case SDL_MOUSEBUTTONDOWN:
@@ -57,7 +65,7 @@ void SceneDecisions::update(float dtime, SDL_Event *event)
 		{
 			Vector2D cell = maze->pix2cell(Vector2D((float)(event->button.x), (float)(event->button.y)));
 			if (maze->isValidCell(cell)) {
-				agents[0]->addPathPoint(maze->cell2pix(cell));
+				agents[0]->addPathPoint(maze->cell2pix(cell));			
 			}
 		}
 		break;
@@ -66,21 +74,12 @@ void SceneDecisions::update(float dtime, SDL_Event *event)
 	}
 
 	agents[0]->update(dtime, event);
-
-	// if we have arrived to the coin, replace it in a random cell!
-	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == coinPosition))
-	{
-		coinPosition = Vector2D(-1, -1);
-		while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, maze->pix2cell(agents[0]->getPosition()))<3))
-			coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-	}
-	
+	agents[1]->update(dtime, event);
 }
 
 void SceneDecisions::draw()
 {
 	drawMaze();
-	drawCoin();
 
 	if (draw_grid)
 	{
@@ -96,6 +95,8 @@ void SceneDecisions::draw()
 	}
 
 	agents[0]->draw();
+
+	agents[1]->draw();
 }
 
 const char* SceneDecisions::getTitle()
@@ -128,14 +129,6 @@ void SceneDecisions::drawMaze()
 	}
 	//Alternative: render a backgroud texture:
 	//SDL_RenderCopy(TheApp::Instance()->getRenderer(), background_texture, NULL, NULL );
-}
-
-void SceneDecisions::drawCoin()
-{
-	Vector2D coin_coords = maze->cell2pix(coinPosition);
-	int offset = CELL_SIZE / 2;
-	SDL_Rect dstrect = {(int)coin_coords.x-offset, (int)coin_coords.y - offset, CELL_SIZE, CELL_SIZE};
-	SDL_RenderCopy(TheApp::Instance()->getRenderer(), coin_texture, NULL, &dstrect);
 }
 
 
