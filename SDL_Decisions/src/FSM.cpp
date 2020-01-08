@@ -3,15 +3,20 @@
 
 FSM::FSM()
 {
-	current_state = new FSM_Wander;
+	current_state = new FSMWander;
 }
 
 FSM::~FSM()
 {
+
 }
 
 void FSM::update(Agent *agent, float dtime)
 {
+	FSMState* state = current_state->Update(agent, dtime);
+	if (state != NULL) {
+		ChangeState(state, agent);
+	}
 	
 }
 

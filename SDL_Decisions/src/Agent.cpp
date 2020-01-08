@@ -213,3 +213,15 @@ void Agent::setGun(bool gun) {
 void Agent::setScene(SceneDecisions *scene) {
 	sensors->setWorld(scene);
 }
+
+void Agent::setEnemy(Agent* agent) {
+	enemy = agent;
+}
+
+Agent* Agent::getEnemy() {
+	return enemy;
+}
+
+Agent::DecisionMakingAlgorithm* Agent::getBrain() {
+	return brain;
+}

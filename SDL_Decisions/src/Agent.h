@@ -59,6 +59,7 @@ private:
 	int sprite_h;
 
 	bool armed;
+	Agent *enemy;
 
 public:
 	Agent();
@@ -91,4 +92,7 @@ public:
 
 	bool hasGun();
 	void setGun(bool gun);
+	void setEnemy(Agent* agent);
+	Agent* getEnemy();
+	DecisionMakingAlgorithm* getBrain();
 };
