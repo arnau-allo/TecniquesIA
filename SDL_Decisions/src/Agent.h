@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <ctime>
 #include <cstdlib>
 #include <minmax.h>
 #include <SDL.h>
@@ -8,7 +9,6 @@
 #include "Path.h"
 #include "Vector2D.h"
 #include "utils.h"
-#include "SensorySystem.h"
 #include <deque>
 
 
@@ -68,8 +68,6 @@ private:
 public:
 	Agent();
 	~Agent();
-
-	SensorySystem* sensors;
 
 	void update(float dtime, SDL_Event *event);
 	void draw();

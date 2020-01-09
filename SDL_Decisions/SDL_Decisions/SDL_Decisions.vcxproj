@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{48D8AFB0-551E-45CB-8730-E2CF8571445D}</ProjectGuid>
     <RootNamespace>SDL_Decisions</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>SDL_Decisions</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -143,7 +143,6 @@
     <ClInclude Include="..\src\SceneDecisions.h" />
     <ClInclude Include="..\src\SDL_SimpleApp.h" />
     <ClInclude Include="..\src\Seek.h" />
-    <ClInclude Include="..\src\SensorySystem.h" />
     <ClInclude Include="..\src\utils.h" />
     <ClInclude Include="..\src\Vector2D.h" />
   </ItemGroup>
@@ -156,7 +155,6 @@
     <ClCompile Include="..\src\SceneDecisions.cpp" />
     <ClCompile Include="..\src\SDL_SimpleApp.cpp" />
     <ClCompile Include="..\src\Seek.cpp" />
-    <ClCompile Include="..\src\SensorySystem.cpp" />
     <ClCompile Include="..\src\utils.cpp" />
   </ItemGroup>
   <ItemGroup>

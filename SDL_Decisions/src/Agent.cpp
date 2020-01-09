@@ -276,7 +276,6 @@ Grid* Agent::getGrid() {
 int Agent::getHeuristic(Vector2D start, Vector2D end) {
 	float distX = abs(start.x - end.x);
 	float distY = abs(start.y - end.y);
-
 	return distX > distY ? distX : distY;
 }
 

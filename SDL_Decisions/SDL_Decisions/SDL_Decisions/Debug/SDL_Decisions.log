@@ -1,115 +1,82 @@
 ﻿  Agent.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(10): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(11): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(10): error C2027: use of undefined type 'Agent'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(7): note: see declaration of 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(11): error C2504: 'DecisionMakingAlgorithm': base class undefined
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): error C2061: syntax error: identifier 'SceneDecisions'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(100): error C2061: syntax error: identifier 'Grid'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(57): error C2061: syntax error: identifier 'SensorySystem'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(57): error C2612: trailing ')' illegal in base/member initializer list
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(592): fatal error C1004: unexpected end-of-file found
   FSMState.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(10): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(11): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_chase.h(5): error C2504: 'FSMState': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(5): error C2504: 'FSMState': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(9): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(11): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_flee.h(5): error C2504: 'FSMState': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(11): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(11): error C2504: 'DecisionMakingAlgorithm': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(13): error C2143: syntax error: missing ';' before '*'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(13): error C2238: unexpected token(s) preceding ';'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(17): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(18): error C2061: syntax error: identifier 'FSMState'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.h(24): error C2065: 'Agent': undeclared identifier
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.h(24): error C2059: syntax error: '>'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(12): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(8): error C3867: 'Vector2D::Normalize': non-standard syntax; use '&' to create a pointer to member
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(13): error C2275: 'FSMFlee': illegal use of this type as an expression
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(24): note: see declaration of 'FSMFlee'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(17): error C2275: 'FSMWander': illegal use of this type as an expression
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(17): note: see declaration of 'FSMWander'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(31): error C3867: 'Vector2D::Normalize': non-standard syntax; use '&' to create a pointer to member
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(33): error C2275: 'FSMChase': illegal use of this type as an expression
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(31): note: see declaration of 'FSMChase'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(36): error C2275: 'FSMFlee': illegal use of this type as an expression
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(24): note: see declaration of 'FSMFlee'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(55): error C3867: 'Vector2D::Normalize': non-standard syntax; use '&' to create a pointer to member
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(57): error C2275: 'FSMChase': illegal use of this type as an expression
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(31): note: see declaration of 'FSMChase'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(64): error C2275: 'FSMWander': illegal use of this type as an expression
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(17): note: see declaration of 'FSMWander'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): error C2061: syntax error: identifier 'SceneDecisions'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(100): error C2061: syntax error: identifier 'Grid'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(8): error C3867: 'Vector2D::Length': non-standard syntax; use '&' to create a pointer to member
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(8): error C2446: '<': no conversion from 'int' to 'float (__thiscall Vector2D::* )(void) const'
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(8): note: There are no conversions from integral values to pointer-to-member values
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(30): error C2065: 'SceneDecisions': undeclared identifier
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(30): error C2065: 'scene': undeclared identifier
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(30): error C2039: 'sensors': is not a member of 'Agent'
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(7): note: see declaration of 'Agent'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(31): error C3867: 'Vector2D::Length': non-standard syntax; use '&' to create a pointer to member
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(31): error C2446: '<': no conversion from 'int' to 'float (__thiscall Vector2D::* )(void) const'
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(31): note: There are no conversions from integral values to pointer-to-member values
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(45): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(46): error C2039: 'getGrid': is not a member of 'Agent'
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(7): note: see declaration of 'Agent'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(64): error C3867: 'Vector2D::Length': non-standard syntax; use '&' to create a pointer to member
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(64): error C2446: '<': no conversion from 'int' to 'float (__thiscall Vector2D::* )(void) const'
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(64): note: There are no conversions from integral values to pointer-to-member values
   Grid.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(10): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(11): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(10): error C2027: use of undefined type 'Agent'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(7): note: see declaration of 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(11): error C2504: 'DecisionMakingAlgorithm': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.h(27): error C2143: syntax error: missing ';' before '*'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.h(27): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.h(27): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): error C2061: syntax error: identifier 'SceneDecisions'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(100): error C2061: syntax error: identifier 'Grid'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2238: unexpected token(s) preceding ';'
   main.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(12): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(13): error C2061: syntax error: identifier 'SceneDecisions'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(14): error C2143: syntax error: missing ';' before '*'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(14): error C2238: unexpected token(s) preceding ';'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(91): error C2061: syntax error: identifier 'SceneDecisions'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\main.cpp : fatal error C1041: cannot open program database 'C:\Users\Arnau\Desktop\TecniquesIA\SDL_Decisions\SDL_Decisions\SDL_Decisions\Debug\vc141.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   PathFollowing.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(6): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\seek.h(10): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(10): error C2027: use of undefined type 'Agent'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(7): note: see declaration of 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(11): error C2504: 'DecisionMakingAlgorithm': base class undefined
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): error C2061: syntax error: identifier 'SceneDecisions'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(100): error C2061: syntax error: identifier 'Grid'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2238: unexpected token(s) preceding ';'
   SceneDecisions.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(12): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(13): error C2061: syntax error: identifier 'SceneDecisions'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(14): error C2143: syntax error: missing ';' before '*'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.h(14): error C2238: unexpected token(s) preceding ';'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(91): error C2061: syntax error: identifier 'SceneDecisions'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.cpp(18): error C2660: 'Agent::setScene': function does not take 1 arguments
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(91): note: see declaration of 'Agent::setScene'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\scenedecisions.cpp(25): error C2660: 'Agent::setScene': function does not take 1 arguments
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(91): note: see declaration of 'Agent::setScene'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): error C2061: syntax error: identifier 'SceneDecisions'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(100): error C2061: syntax error: identifier 'Grid'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\scenedecisions.cpp(18): error C2660: 'Agent::setScene': function does not take 1 arguments
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): note: see declaration of 'Agent::setScene'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\scenedecisions.cpp(25): error C2660: 'Agent::setScene': function does not take 1 arguments
+  c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): note: see declaration of 'Agent::setScene'
   Seek.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2653: 'Agent': is not a class or namespace name
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(7): error C2504: 'SteeringBehavior': base class undefined
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\pathfollowing.h(11): error C2061: syntax error: identifier 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(10): error C2027: use of undefined type 'Agent'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(7): note: see declaration of 'Agent'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm.h(11): error C2504: 'DecisionMakingAlgorithm': base class undefined
-  SensorySystem.cpp
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(68): error C2143: syntax error: missing ';' before '*'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(68): error C2238: unexpected token(s) preceding ';'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\agent.h(91): error C2061: syntax error: identifier 'SceneDecisions'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsm_wander.h(10): error C2555: 'FSM_Wander::Update': overriding virtual function return type differs and is not covariant from 'FSMState::Update'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\fsmstate.h(13): note: see declaration of 'FSMState::Update'
-c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.cpp(22): error C2440: 'return': cannot convert from 'Scene *' to 'SceneDecisions *'
-  c:\users\arnau.allo\desktop\tecniquesia\sdl_decisions\src\sensorysystem.cpp(22): note: Cast from base to derived requires dynamic_cast or static_cast
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(93): error C2061: syntax error: identifier 'SceneDecisions'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(100): error C2061: syntax error: identifier 'Grid'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2143: syntax error: missing ';' before '*'
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.h(101): error C2238: unexpected token(s) preceding ';'
   Generating Code...
