@@ -163,7 +163,7 @@ bool SceneDecisions::loadTextures(char* filename_bg, char* filename_coin)
 		return false;
 	}
 	coin_texture = SDL_CreateTextureFromSurface(TheApp::Instance()->getRenderer(), image);
-
+	
 	if (image)
 		SDL_FreeSurface(image);
 

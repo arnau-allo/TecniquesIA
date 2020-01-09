@@ -5,7 +5,7 @@
 class SensorySystem
 {
 private:
-	Scene *world;
+	SceneDecisions *world;
 public:
 	SensorySystem();
 	~SensorySystem();

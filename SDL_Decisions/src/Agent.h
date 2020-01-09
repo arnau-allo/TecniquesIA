@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cstdlib>
 #include <minmax.h>
 #include <SDL.h>
 #include <SDL_image.h>
@@ -8,6 +9,8 @@
 #include "Vector2D.h"
 #include "utils.h"
 #include "SensorySystem.h"
+#include <deque>
+
 
 class Agent
 {
@@ -98,4 +101,8 @@ public:
 	DecisionMakingAlgorithm* getBrain();
 	void setGrid(Grid *grid_);
 	Grid* getGrid();
+	int getHeuristic(Vector2D start, Vector2D end);
+	Path getPathGreedy(Vector2D start, Vector2D end);
+	Vector2D getRandomPosition();
+
 };
