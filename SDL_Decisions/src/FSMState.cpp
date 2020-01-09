@@ -5,16 +5,16 @@ void FSMChase::Enter(Agent* agent) {
 	std::cout << "Entered Chase State" << std::endl;
 }
 FSMState* FSMChase::Update(Agent* agent, float dt) {
-	if ((agent->getEnemy()->getPosition() - agent->getPosition()).Normalize < 30) {
+	if ((agent->getEnemy()->getPosition() - agent->getPosition()).Length < 30) {
 		if (!agent->getEnemy()->hasGun()) {
 			return NULL;
 		}
 		else {
-			return FSMFlee;
+			return new FSMFlee(agent);
 		}
 	}
 	else {
-		return FSMWander;
+		return new FSMWander(agent);
 	}
 }
 void FSMChase::Exit(Agent* agent) {
@@ -28,15 +28,17 @@ void FSMWander::Enter(Agent* agent) {
 }
 FSMState* FSMWander::Update(Agent* agent, float dt) {
 	SceneDecisions* scene = agent->sensors->getScene();
-	if ((agent->getEnemy()->getPosition() - agent->getPosition()).Normalize < 30) {
+	if ((agent->getEnemy()->getPosition() - agent->getPosition()).Length < 30) {
 		if (!agent->getEnemy()->hasGun()) {
-			return FSMChase;
+			return new FSMChase(agent);
 		}
 		else {
-			return FSMFlee;
+			return new FSMFlee(agent);
 		}
 	}
 	else {
+		//if agent -> path is empty
+		//agent -> create random path
 		return NULL;
 	}
 }
@@ -52,16 +54,16 @@ void FSMFlee::Enter(Agent* agent) {
 }
 FSMState* FSMFlee::Update(Agent* agent, float dt) {
 	//CURRENT_BEHAVIOUR UPDATE
-	if ((agent->getEnemy()->getPosition() - agent->getPosition()).Normalize < 30) {
+	if ((agent->getEnemy()->getPosition() - agent->getPosition()).Length < 30) {
 		if (!agent->getEnemy()->hasGun()) {
-			return FSMChase;
+			return new FSMChase(agent);
 		}
 		else {
 			return NULL;
 		}
 	}
 	else {
-		return FSMWander;
+		return new FSMWander(agent);
 	}
 }
 void FSMFlee::Exit(Agent* agent) {

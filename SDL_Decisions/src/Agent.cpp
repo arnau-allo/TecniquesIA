@@ -225,3 +225,11 @@ Agent* Agent::getEnemy() {
 Agent::DecisionMakingAlgorithm* Agent::getBrain() {
 	return brain;
 }
+
+void Agent::setGrid(Grid* grid_) {
+	grid = grid_;
+}
+
+Grid* Agent::getGrid() {
+	return grid;
+}

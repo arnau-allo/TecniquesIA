@@ -11,9 +11,10 @@ class FSM :
 {
 private:
 	FSMState* current_state;
+	Agent* agent;
 public:
-	FSM();
+	FSM(Agent* _agent);
 	~FSM();
 	void update(Agent *agent, float dtime);
-	void ChangeState(FSMState* new_state, Agent* agent);
+	void ChangeState(FSMState* new_state);
 };

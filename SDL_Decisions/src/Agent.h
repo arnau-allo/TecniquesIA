@@ -43,6 +43,7 @@ private:
 	PathFindingAlgorithm* pathfinder;
 	Path path;
 	int currentTargetIndex;
+	Grid *grid;
 
 	// Decision Making
 	DecisionMakingAlgorithm* brain;
@@ -95,4 +96,6 @@ public:
 	void setEnemy(Agent* agent);
 	Agent* getEnemy();
 	DecisionMakingAlgorithm* getBrain();
+	void setGrid(Grid *grid_);
+	Grid* getGrid();
 };

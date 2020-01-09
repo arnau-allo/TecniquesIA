@@ -14,22 +14,25 @@ public:
 	virtual void Exit(Agent* agent) = 0;
 };
 
-class FSMWander:FSMState {
+class FSMWander: public FSMState {
 public:
+	FSMWander(Agent* agent);
 	void Enter(Agent* agent);
 	FSMState* Update(Agent* agent, float dt);
 	void Exit(Agent* agent);
 };
 
-class FSMFlee:FSMState {
+class FSMFlee: public FSMState {
 public:
+	FSMFlee(Agent* agent);
 	void Enter(Agent* agent);
 	FSMState* Update(Agent* agent, float dt);
 	void Exit(Agent* agent);
 };
 
-class FSMChase:FSMState {
+class FSMChase: public FSMState {
 public:
+	FSMChase(Agent* agent);
 	void Enter(Agent* agent);
 	FSMState* Update(Agent* agent, float dt);
 	void Exit(Agent* agent);
