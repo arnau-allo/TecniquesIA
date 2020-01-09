@@ -4,7 +4,7 @@
 FSM::FSM(Agent* _agent)
 {
 	agent = _agent;
-	current_state = new FSMWander;
+	current_state = new FSMWander(_agent);
 }
 
 FSM::~FSM()
@@ -18,7 +18,6 @@ void FSM::update(Agent *agent, float dtime)
 	if (state != NULL) {
 		ChangeState(state);
 	}
-	
 }
 
 void FSM::ChangeState(FSMState* new_state) 

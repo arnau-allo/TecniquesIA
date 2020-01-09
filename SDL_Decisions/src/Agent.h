@@ -10,6 +10,7 @@
 #include "Vector2D.h"
 #include "utils.h"
 #include <deque>
+#include "Grid.h"
 
 
 class Agent
@@ -90,17 +91,17 @@ public:
 	int getPathSize();
 	Vector2D getPathPoint(int idx);
 	void clearPath();
-	void setScene(SceneDecisions *scene);
 
 	bool hasGun();
 	void setGun(bool gun);
 	void setEnemy(Agent* agent);
 	Agent* getEnemy();
-	DecisionMakingAlgorithm* getBrain();
 	void setGrid(Grid *grid_);
 	Grid* getGrid();
 	int getHeuristic(Vector2D start, Vector2D end);
 	Path getPathGreedy(Vector2D start, Vector2D end);
 	Vector2D getRandomPosition();
+	DecisionMakingAlgorithm* getBrain();
+	void setBrain(DecisionMakingAlgorithm* brain_);
 
 };

@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 #include <time.h>
-#include "Agent.h"
+#include "SDL_SimpleApp.h"
 
 class Grid
 {

@@ -15,14 +15,13 @@ SceneDecisions::SceneDecisions()
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agent->setBehavior(new PathFollowing);
 	agent->setTarget(Vector2D(-20,-20));
-	agent->setScene(this);
 	agents.push_back(agent);
 
 	agent = new Agent;
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agent->setBehavior(new PathFollowing);
 	agent->setTarget(Vector2D(-20, -20));
-	agent->setScene(this);
+	agent->setBrain(new FSM(agent));
 	agents.push_back(agent);
 
 	// set agent position coords to the center of a random cell

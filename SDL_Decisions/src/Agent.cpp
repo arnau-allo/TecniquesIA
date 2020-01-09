@@ -54,7 +54,6 @@ Agent::Agent() : sprite_texture(0),
 	             sprite_w(0),
 	             sprite_h(0),
 				 armed(false),
-				 sensors(new SensorySystem()),
 	             draw_sprite(false)
 {
 }
@@ -145,8 +144,10 @@ void Agent::update(float dtime, SDL_Event *event)
 	if (position.x > TheApp::Instance()->getWinSize().x) position.x = 0;
 	if (position.y > TheApp::Instance()->getWinSize().y) position.y = 0;
 
-	sensors->update(this, dtime);
-	brain->update(this, dtime);
+	if (brain != nullptr) {
+		brain->update(this, dtime);
+	}
+	
 }
 
 
@@ -249,9 +250,6 @@ void Agent::setGun(bool gun) {
 	armed = gun;
 }
 
-void Agent::setScene(SceneDecisions *scene) {
-	sensors->setWorld(scene);
-}
 
 void Agent::setEnemy(Agent* agent) {
 	enemy = agent;
@@ -259,10 +257,6 @@ void Agent::setEnemy(Agent* agent) {
 
 Agent* Agent::getEnemy() {
 	return enemy;
-}
-
-Agent::DecisionMakingAlgorithm* Agent::getBrain() {
-	return brain;
 }
 
 void Agent::setGrid(Grid* grid_) {
@@ -588,4 +582,12 @@ Vector2D Agent::getRandomPosition() {
 		randPosition = Vector2D((float)(rand() % grid->getNumCellX()), (float)(rand() % grid->getNumCellY()));
 	}
 	return randPosition;
+}
+
+Agent::DecisionMakingAlgorithm* Agent::getBrain() {
+	return brain;
+}
+
+void Agent::setBrain(Agent::DecisionMakingAlgorithm* brain_) {
+	brain = brain_;
 }

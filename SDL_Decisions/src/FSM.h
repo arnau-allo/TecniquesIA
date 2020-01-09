@@ -1,9 +1,7 @@
 #pragma once
 #include "Agent.h"
 #include "FSMState.h"
-#include "FSM_Chase.h"
-#include "FSM_Wander.h"
-#include "FSM_Flee.h"
+
 
 
 class FSM :
