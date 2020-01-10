@@ -1,2 +1,20 @@
-﻿SceneDecisions.obj : error LNK2019: unresolved external symbol "public: __thiscall FSM::FSM(class Agent *)" (??0FSM@@QAE@PAVAgent@@@Z) referenced in function "public: __thiscall SceneDecisions::SceneDecisions(void)" (??0SceneDecisions@@QAE@XZ)
-C:\Users\Arnau\Desktop\TecniquesIA\SDL_Decisions\\bin\SDL_Decisions.exe : fatal error LNK1120: 1 unresolved externals
+﻿  Agent.cpp
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(278): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(291): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(306): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(311): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(316): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(323): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(338): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(342): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(347): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(354): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(369): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(373): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(378): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(384): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(399): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(403): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(408): warning C4018: '<': signed/unsigned mismatch
+c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\agent.cpp(415): warning C4018: '<': signed/unsigned mismatch
+  SDL_Decisions.vcxproj -> C:\Users\Arnau\Desktop\TecniquesIA\SDL_Decisions\\bin\SDL_Decisions.exe

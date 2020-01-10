@@ -47,10 +47,13 @@
     <ClInclude Include="..\src\Vector2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\FSMState.h">
+    <ClInclude Include="..\src\SceneDecisions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\SceneDecisions.h">
+    <ClInclude Include="..\src\FSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FSMState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -79,16 +82,11 @@
     <ClCompile Include="..\src\SceneDecisions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\FSM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\FSMState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\src\FSM.h">
-      <Filter>Header Files</Filter>
-    </Text>
-    <Text Include="..\src\FSM.cpp">
-      <Filter>Source Files</Filter>
-    </Text>
   </ItemGroup>
 </Project>

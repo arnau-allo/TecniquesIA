@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Agent.h" />
+    <ClInclude Include="..\src\FSM.h" />
     <ClInclude Include="..\src\FSMState.h" />
     <ClInclude Include="..\src\Grid.h" />
     <ClInclude Include="..\src\Path.h" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Agent.cpp" />
+    <ClCompile Include="..\src\FSM.cpp" />
     <ClCompile Include="..\src\FSMState.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
     <ClCompile Include="..\src\main.cpp" />
@@ -156,10 +158,6 @@
     <ClCompile Include="..\src\SDL_SimpleApp.cpp" />
     <ClCompile Include="..\src\Seek.cpp" />
     <ClCompile Include="..\src\utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\src\FSM.cpp" />
-    <Text Include="..\src\FSM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

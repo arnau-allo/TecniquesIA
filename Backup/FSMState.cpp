@@ -63,7 +63,7 @@ FSMState* FSMWander::Update(Agent* agent, float dt) {
 		if (agent->getPathSize() == 0)
 		{
 			Vector2D destination = agent->getRandomPosition();
-			Path newPath = agent->getPathGreedy(agent->getGrid()->pix2cell(agent->getPosition()), agent->getGrid()->pix2cell(destination));
+			Path newPath = agent->getPathGreedy(agent->getPosition(), destination);
 			for (int i = 0; i < newPath.points.size(); i++) {
 				agent->addPathPoint(agent->getGrid()->cell2pix(newPath.points[i]));
 			}

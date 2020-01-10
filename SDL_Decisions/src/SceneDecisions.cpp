@@ -22,6 +22,8 @@ SceneDecisions::SceneDecisions()
 	agent->setBehavior(new PathFollowing);
 	agent->setTarget(Vector2D(-20, -20));
 	agent->setBrain(new FSM(agent));
+	agent->setEnemy(agents[0]);
+	agent->setGrid(maze);
 	agents.push_back(agent);
 
 	// set agent position coords to the center of a random cell
