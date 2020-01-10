@@ -103,5 +103,4 @@ public:
 	Vector2D getRandomPosition();
 	DecisionMakingAlgorithm* getBrain();
 	void setBrain(DecisionMakingAlgorithm* brain_);
-
 };

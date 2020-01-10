@@ -8,17 +8,20 @@ void FSMChase::Enter(Agent* agent) {
 	std::cout << "Entered Chase State" << std::endl;
 }
 FSMState* FSMChase::Update(Agent* agent, float dt) {
-	std::cout << "Update Chase State" << std::endl;
+	//std::cout << "Update Chase State" << std::endl;
 
 	Vector2D distanceVec = agent->getEnemy()->getPosition() - agent->getPosition();
 	float distance = distanceVec.Length();
 
-	if (distance < 30) {
+	if (distance < 200) {
 		if (!agent->getEnemy()->hasGun()) {
+			agent->clearPath();
 			Vector2D destination = agent->getEnemy()->getPosition();
-			Path newPath = agent->getPathGreedy(agent->getPosition(), destination);
-			for (int i = 0; i < newPath.points.size(); i++) {
-				agent->addPathPoint(agent->getGrid()->cell2pix(newPath.points[i]));
+			if (agent->getGrid()->isValidCell(agent->getGrid()->pix2cell(destination))) {
+				Path newPath = agent->getPathGreedy(agent->getGrid()->pix2cell(agent->getPosition()), agent->getGrid()->pix2cell(destination));
+				for (int i = 0; i < newPath.points.size(); i++) {
+					agent->addPathPoint(agent->getGrid()->cell2pix(newPath.points[i]));
+				}
 			}
 			return nullptr;
 		}
@@ -45,12 +48,14 @@ void FSMWander::Enter(Agent* agent) {
 	
 }
 FSMState* FSMWander::Update(Agent* agent, float dt) {
-	std::cout << "Update Wander State" << std::endl;
+	//std::cout << "Update Wander State" << std::endl;
+
+	draw_circle(TheApp::Instance()->getRenderer(), (int)agent->getPosition().x, (int)agent->getPosition().y, 200, 255, 255, 0, 255);
 
 	Vector2D distanceVec = agent->getEnemy()->getPosition() - agent->getPosition();
 	float distance = distanceVec.Length();
 
-	if (distance < 30) {
+	if (distance < 200) {
 		if (!agent->getEnemy()->hasGun()) {
 			return new FSMChase(agent);
 		}
@@ -82,22 +87,23 @@ FSMFlee::FSMFlee(Agent* agent) {
 }
 void FSMFlee::Enter(Agent* agent) {
 	std::cout << "Entered Flee State" << std::endl;
-	//CURRENT BEHAVIOUR = NEW BEHAVIOUR
+
 }
 FSMState* FSMFlee::Update(Agent* agent, float dt) {
-	//CURRENT_BEHAVIOUR UPDATE
-	std::cout << "Update Flee State" << std::endl;
+	
+	//std::cout << "Update Flee State" << std::endl;
 
 	Vector2D distanceVec = agent->getEnemy()->getPosition() - agent->getPosition();
 	float distance = distanceVec.Length();
 
-	if (distance < 30) {
+	if (distance < 200) {
 		if (!agent->getEnemy()->hasGun()) {
 			return new FSMChase(agent);
 		}
 		else {
+			agent->clearPath();
 			Vector2D destination = agent->getEnemy()->getPosition();
-			Path newPath = agent->getPathGreedy(agent->getPosition(), destination);
+			Path newPath = agent->getPathGreedy(agent->getGrid()->pix2cell(agent->getPosition()), agent->getGrid()->pix2cell(destination));
 			for (int i = 0; i < newPath.points.size(); i++) {
 				agent->addPathPoint(agent->getGrid()->cell2pix(newPath.points[i]));
 			}

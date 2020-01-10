@@ -424,6 +424,136 @@ Path Agent::getPathGreedy(Vector2D start, Vector2D end) {
 			}
 		}
 
+
+		alreadyVisited = false;
+		alreadyFrontier = false;
+		Vector2D point1 = (0, 0);
+		point1.x = itNode.position.x - 1.0f;
+		point1.y = itNode.position.y - 1.0f;
+		if (grid->isValidCell(point1)) {
+			MyNode n1 = MyNode(point1, &visitedCells[visitedCells.size() - 1], 0, 0, getHeuristic(end, point1));
+			if (point1 == end) {
+				visitedCells.push_back(n1);
+				break;
+			}
+			for (int i = 0; i < visitedCells.size(); i++) {
+				if (visitedCells[i].position == point1) {
+					alreadyVisited = true;
+					break;
+				}
+			}
+			if (!alreadyVisited) {
+				for (int i = 0; i < frontierGreedy.size(); i++) {
+					if (frontierGreedy[i].position == point1) {
+
+						alreadyFrontier = true;
+						break;
+					}
+				}
+				if (!alreadyFrontier) {
+					//n8.costSoFar = n8.cost + n8.parent->costSoFar;
+					frontierGreedy.push_back(n1);
+				}
+			}
+		}
+
+		alreadyVisited = false;
+		alreadyFrontier = false;
+		Vector2D point3 = (0, 0);
+		point3.x = itNode.position.x + 1.0f;
+		point3.y = itNode.position.y - 1.0f;
+		if (grid->isValidCell(point3)) {
+			MyNode n3 = MyNode(point3, &visitedCells[visitedCells.size() - 1], 0, 0, getHeuristic(end, point3));
+			if (point3 == end) {
+				visitedCells.push_back(n3);
+				break;
+			}
+			for (int i = 0; i < visitedCells.size(); i++) {
+				if (visitedCells[i].position == point3) {
+					alreadyVisited = true;
+					break;
+				}
+			}
+			if (!alreadyVisited) {
+				for (int i = 0; i < frontierGreedy.size(); i++) {
+					if (frontierGreedy[i].position == point3) {
+
+						alreadyFrontier = true;
+						break;
+					}
+				}
+				if (!alreadyFrontier) {
+					//n8.costSoFar = n8.cost + n8.parent->costSoFar;
+					frontierGreedy.push_back(n3);
+				}
+			}
+		}
+
+		alreadyVisited = false;
+		alreadyFrontier = false;
+		Vector2D point7 = (0, 0);
+		point7.x = itNode.position.x - 1.0f;
+		point7.y = itNode.position.y + 1.0f;
+		if (grid->isValidCell(point7)) {
+			MyNode n7 = MyNode(point7, &visitedCells[visitedCells.size() - 1], 0, 0, getHeuristic(end, point7));
+			if (point7 == end) {
+				visitedCells.push_back(n7);
+				break;
+			}
+			for (int i = 0; i < visitedCells.size(); i++) {
+				if (visitedCells[i].position == point7) {
+					alreadyVisited = true;
+					break;
+				}
+			}
+			if (!alreadyVisited) {
+				for (int i = 0; i < frontierGreedy.size(); i++) {
+					if (frontierGreedy[i].position == point7) {
+
+						alreadyFrontier = true;
+						break;
+					}
+				}
+				if (!alreadyFrontier) {
+					//n8.costSoFar = n8.cost + n8.parent->costSoFar;
+					frontierGreedy.push_back(n7);
+				}
+			}
+		}
+
+		alreadyVisited = false;
+		alreadyFrontier = false;
+		Vector2D point9 = (0, 0);
+		point9.x = itNode.position.x + 1.0f;
+		point9.y = itNode.position.y + 1.0f;
+		if (grid->isValidCell(point9)) {
+			MyNode n9 = MyNode(point9, &visitedCells[visitedCells.size() - 1], 0, 0, getHeuristic(end, point9));
+			if (point9 == end) {
+				visitedCells.push_back(n9);
+				break;
+			}
+			for (int i = 0; i < visitedCells.size(); i++) {
+				if (visitedCells[i].position == point9) {
+					alreadyVisited = true;
+					break;
+				}
+			}
+			if (!alreadyVisited) {
+				for (int i = 0; i < frontierGreedy.size(); i++) {
+					if (frontierGreedy[i].position == point9) {
+
+						alreadyFrontier = true;
+						break;
+					}
+				}
+				if (!alreadyFrontier) {
+					//n8.costSoFar = n8.cost + n8.parent->costSoFar;
+					frontierGreedy.push_back(n9);
+				}
+			}
+		}
+
+
 	}
 
 	std::vector<Vector2D> points;
@@ -446,21 +576,44 @@ Path Agent::getPathGreedy(Vector2D start, Vector2D end) {
 	for (int i = points.size() - 1; i >= 0; i--) {
 		myPath.points.push_back(points[i]);
 	}
-	std::cout << "Greedy Nodes: " << visitedCells.size() << std::endl;
 
 	return myPath;
 }
 
 Vector2D Agent::getRandomPosition() {
+	//srand(time(NULL));
 	Vector2D randPosition = Vector2D(-1, -1);
-	while ((!grid->isValidCell(randPosition)) || (Vector2D::Distance(randPosition, position) < 3)) {
-		randPosition = Vector2D(0,0);
+	while ((!grid->isValidCell(randPosition)) ||( (Vector2D::Distance(randPosition, position) < 2))) {
+
 		randPosition.x = (float)(rand() % grid->getNumCellX());
 		randPosition.y = (float)(rand() % grid->getNumCellY());
-		//randPosition = Vector2D((float)(rand() % grid->getNumCellX()), (float)(rand() % grid->getNumCellY()));
+		//randPosition = Vector2D((float)(rgand() % grid->getNumCellX()), (float)(rand() % grid->getNumCellY()));
 	}
 	return randPosition;
+
+	//Vector2D randPosition = Vector2D(-1, -1);
+	//while ((!grid->isValidCell(randPosition)) || ((Vector2D::Distance(randPosition, position) < 2))) {
+	//	
+	//	srand(time(NULL));
+	//	
+	//	float wanderAngle = rand()%360;
+	//	
+
+	//	float wanderRadius = 1;
+	//	Vector2D positionCell = Vector2D(-1,-1);
+	//	positionCell = Vector2D(grid->pix2cell(position));
+	//	float componentX = positionCell.x + cos(wanderAngle) * wanderRadius;
+	//	float componentY = positionCell.y + sin(wanderAngle) * wanderRadius;
+	//	randPosition.x = componentX;
+	//	randPosition.y = componentY;
+
+
+	//	//randPosition = grid->pix2cell(randPosition);
+	//}
+
+	//return randPosition;
 }
+
 
 Agent::DecisionMakingAlgorithm* Agent::getBrain() {
 	return brain;
