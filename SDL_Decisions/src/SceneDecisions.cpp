@@ -60,14 +60,20 @@ SceneDecisions::~SceneDecisions()
 void SceneDecisions::update(float dtime, SDL_Event *event)
 {
 	/* Keyboard & Mouse events */
+	
 	switch (event->type) {
 	case SDL_KEYDOWN:
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_grid = !draw_grid;
-		if (event->key.keysym.scancode == SDL_SCANCODE_A)
+		if (event->key.keysym.scancode == SDL_SCANCODE_A) {
+			std::cout << "Enemy Gun State:" << agents[0]->hasGun() << std::endl;
 			agents[0]->setGun(true);
-		if (event->key.keysym.scancode == SDL_SCANCODE_S)
+
+		}
+		if (event->key.keysym.scancode == SDL_SCANCODE_S) {
+			std::cout << "Enemy Gun State:" << agents[0]->hasGun() << std::endl;
 			agents[0]->setGun(false);
+		}
 		break;
 	case SDL_MOUSEMOTION:
 	case SDL_MOUSEBUTTONDOWN:

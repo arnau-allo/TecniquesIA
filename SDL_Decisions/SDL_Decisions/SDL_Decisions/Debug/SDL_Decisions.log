@@ -1,5 +1,2 @@
-﻿  FSMState.cpp
-c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(22): warning C4018: '<': signed/unsigned mismatch
-c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(72): warning C4018: '<': signed/unsigned mismatch
-c:\users\arnau\desktop\tecniquesia\sdl_decisions\src\fsmstate.cpp(107): warning C4018: '<': signed/unsigned mismatch
+﻿  SceneDecisions.cpp
   SDL_Decisions.vcxproj -> C:\Users\Arnau\Desktop\TecniquesIA\SDL_Decisions\\bin\SDL_Decisions.exe
